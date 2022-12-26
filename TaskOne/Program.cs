@@ -9,7 +9,9 @@ int arrayLenght = Convert.ToInt32(Console.ReadLine());
 string[] array = new string[arrayLenght];
 
 FillArray(array);
+Console.Clear();
 Console.WriteLine($"Получился следующий массив: {string.Join(", ",array)}");
+ChangeAndPrintArray(array);
 
 string[] FillArray(string[] array)
 {
@@ -22,4 +24,15 @@ string[] FillArray(string[] array)
         j++;
     }
     return array;
+}
+
+void ChangeAndPrintArray (string[] array)
+{
+    Console.Write("Итоговый массив будет таким: ");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length > 3 ) continue;
+        Console.Write(array[i]);
+        if (i!= array.Length-1) Console.Write(", ");
+    }
 }
